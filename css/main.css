@@ -1,0 +1,282 @@
+/* Color Palette
+  White: #F3F2EB;
+  Black: #000000;
+  Medium Gray: #999999;
+  Light Gray: #dddddd;
+  Light blue: #99ffff;
+*/
+
+
+/*********** Begin Layout Styles ***********/
+body {
+  background-color: #F3F2EB;
+}
+
+div.container {
+  background-color: #F3F2EB;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 900px; /* disable this line if you want full-width layouts */
+}
+
+header, main, footer {
+  padding: 15px;
+  margin: 15px;
+}
+
+/* phones (base layout is mobile-first) */
+header {
+  background-color: #333333;
+  /*border: 3px solid #990000;  disable this line once layout works */
+  display: grid;
+  grid-column-gap: 15px;
+  grid-row-gap: 15px;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "logo menulink";
+
+}
+
+main {
+  /*border: 3px solid #009900;  disable this line once layout works */
+  display: grid;
+  grid-column-gap: 15px;
+  grid-row-gap: 15px;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "carousel"
+    "shake"
+    "fries";
+}
+
+footer {
+  /* border: 3px solid #000099; disable this line once layout works */
+  background-color: #333333;
+  border-top: 5px solid #BC313A;
+  display: grid;
+  grid-column-gap: 15px;
+  grid-row-gap: 15px;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "rate"
+    "contact"
+    "name";
+}
+
+/* tablets and small laptops */
+@media (min-width: 600px) {
+
+  header {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "logo menulink";
+  }
+
+  main {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "carousel carousel"
+      "shake fries";
+  }
+
+  footer {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+    "rate rate"
+    "contact"
+    "name";
+  }
+}
+
+/* desktops */
+@media (min-width: 900px) {
+  header {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "logo menulink";
+  }
+
+  main {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "carousel carousel"
+      "shake fries";
+  }
+
+  footer {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+    "rate"
+    "contact"
+    "name";
+  }
+}
+
+div {
+  /*border: 1px solid #999999; disable this line once layout works */
+  /*text-align: center; disable this line once layout works */
+}
+
+main div {
+  /*  min-height: 80px; disable this line once layout works */
+
+}
+
+div#logo {
+  grid-area: logo;
+}
+
+div#menulink {
+  grid-area: menulink;
+}
+
+div#carousel {
+  grid-area: carousel;
+  max-width: 1000px;
+  overflow:hidden;
+}
+
+div#shake {
+  grid-area: shake;
+  text-align: center;
+  color: #FFFFFF;
+
+   background-image: url("../img/cherry-shake.jpg");
+   background-size: cover;
+   color: #000000;
+   background-repeat: no-repeat;
+   background-position: center center;
+
+}
+
+div#fries {
+  grid-area: fries;
+  text-align: center;
+  color: #000000;
+
+  background-image: url("../img/back-fries.jpg");
+   background-color: #FFFFFF;
+   background-repeat: no-repeat;
+   background-position: center center;
+   background-size: cover;
+}
+
+div#rate {
+  grid-area: rate;
+  text-align: center;
+}
+
+div#contact {
+  grid-area: contact;
+}
+
+div#name {
+  grid-area: name;
+}
+
+/*********** End Layout Styles ***********/
+
+
+/*********** Begin Content Styles ***********/
+
+/* Headings */
+h1 {
+
+}
+
+h2 {
+
+}
+
+h3 {
+
+}
+
+h4 {
+
+}
+
+h5 {
+
+}
+
+h6 {
+
+}
+
+/* Paragraphs and lists */
+
+p {
+
+}
+
+ol {
+
+}
+
+ul {
+
+}
+
+li {
+
+}
+
+/* tables */
+
+table {
+
+}
+
+caption {
+
+}
+
+tr {
+
+}
+
+th {
+
+}
+
+td {
+
+}
+
+/* images */
+img {
+
+}
+
+/* links */
+
+a:link {
+background-color: #333333;
+border: 2px solid #BC313A;
+border-radius: 8px;
+font-size: 35px;
+color: #F3F2EB;
+text-decoration: none;
+font-weight: bold;
+
+}
+
+
+a:visited {
+
+}
+
+a:hover {
+
+}
+
+a:active {
+
+}
+
+/* forms */
+
+
+
+/*********** End Content Styles ***********/

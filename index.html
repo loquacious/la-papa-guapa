@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <title>La Papa Guapa</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- My Styles -->
+  <link href="css/main.css" rel="stylesheet">
+  <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
+  <!-- Owl Carousel Styles -->
+  <link href="css/owl.carousel.min.css" rel="stylesheet">
+  <link href="css/owl.theme.default.min.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <div class="container">
+
+    <header>
+      <div id="logo">
+        <h1>
+        <img src="img/new-logo.png" alt="Papa Guapa">
+        </h1>
+      </div>
+
+      <div id="menulink">
+        <a href="My menu and stuff">Menu</a>
+        <a href="www.example.com">Rate</a>
+      </div>
+
+    </header>
+
+    <main>
+      <div id="carousel">
+
+        <div class="owl-carousel owl-theme">
+          <div><img src="img/new-shake.jpg" alt="Dummy image"></div>
+          <div><img src="img/blue-frie.jpg" alt="New Blue cheese Fries"></div>
+          <div><img src="img/strawberrymilk.png" alt="Dummy image"></div>
+          <div><img src="img/chili-powder.jpg" alt="Dummy image"></div>
+          <div><img src="img/big-shake.jpg" alt="Flaverful Shakes"></div>
+          <div><img src="img/sweet-pot.jpg" alt="Dummy image"></div>
+        </div>
+      </div>
+
+      <div id="shake">
+        <h2>Hand Spun Shakes</h2>
+        <p> Our milkshakes are specially made by hand everytime.  Our make you pick option
+          allows you to make your milkshake into what you want it to be, making sure you
+          get the desired taste that you want.  Make sure to look out for our special of the
+          week. </p>
+
+
+      </div>
+
+      <div id="fries">
+        <h2>Craft Fries</h2>
+        Our fries never see a freezer.  We take pride in making quality and exotic fries,
+        so we make our fries fresh everyday.  Make sure your looking for the fries of the
+        week </p>
+
+
+      </div>
+
+    </main>
+
+    <footer>
+      <div id="rate">
+        <a href="www.example.com">Rate us now</a>
+
+
+
+      </div>
+
+      <div id="contact">
+        Contact us now
+
+
+      </div>
+
+      <div id="name">
+        By:Colt 45
+
+
+
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- first load jquery -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+    <!-- owl carousel stuff -->
+    <script src="js/owl.carousel.min.js"></script>
+    <script>
+      $(document).ready(function(){
+        $('.owl-carousel').owlCarousel({
+            autoplay: true,
+            autoplayTimeout: 3500,
+            dots: true,
+            items: 1,
+            loop: true,
+            margin: 10,
+            nav: false,
+            autoplayHoverPause: true,
+            autoplaySpeed: 1500,
+        })
+      });
+    </script>
+
+</body>
+</html>
