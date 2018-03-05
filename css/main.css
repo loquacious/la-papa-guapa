@@ -26,14 +26,17 @@ header, main, footer {
 
 /* phones (base layout is mobile-first) */
 header {
-  background-color: #333333;
+  align-items: center;
+  background-color: #5A5A5A;
   /*border: 3px solid #990000;  disable this line once layout works */
   display: grid;
   grid-column-gap: 15px;
   grid-row-gap: 15px;
-  grid-template-columns: 1fr;
+  grid-template-columns: 1fr 1fr;
   grid-template-areas:
-    "logo menulink";
+    "logo logo"
+    "menulink rateus";
+
 
 }
 
@@ -46,12 +49,14 @@ main {
   grid-template-areas:
     "carousel"
     "shake"
-    "fries";
+    "fries"
+    "hours"
+    "map";
 }
 
 footer {
   /* border: 3px solid #000099; disable this line once layout works */
-  background-color: #333333;
+  background-color: #5A5A5A;
   border-top: 5px solid #BC313A;
   display: grid;
   grid-column-gap: 15px;
@@ -59,7 +64,9 @@ footer {
   grid-template-columns: 1fr;
   grid-template-areas:
     "rate"
-    "contact"
+    "hire"
+    "phone"
+    "email"
     "name";
 }
 
@@ -67,54 +74,57 @@ footer {
 @media (min-width: 600px) {
 
   header {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     grid-template-areas:
-      "logo menulink";
+      "logo menulink rateus";
   }
 
   main {
     grid-template-columns: 1fr 1fr;
     grid-template-areas:
       "carousel carousel"
-      "shake fries";
+      "shake fries"
+      "hours map";
   }
 
   footer {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
     grid-template-areas:
-    "rate rate"
-    "contact"
-    "name";
+      "rate phone"
+      "hire email"
+      "name .";
   }
 }
 
 /* desktops */
 @media (min-width: 900px) {
   header {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     grid-template-areas:
-      "logo menulink";
+      "logo menulink rateus";
   }
 
   main {
     grid-template-columns: 1fr 1fr;
     grid-template-areas:
       "carousel carousel"
-      "shake fries";
+      "shake fries"
+      "hours map";
   }
 
   footer {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     grid-template-areas:
-    "rate"
-    "contact"
-    "name";
+    "rate rate rate"
+    "hire phone email"
+    "name name name";
   }
 }
 
 div {
   /*border: 1px solid #999999; disable this line once layout works */
   /*text-align: center; disable this line once layout works */
+  box-sizing: border-box;
 }
 
 main div {
@@ -137,28 +147,73 @@ div#carousel {
 }
 
 div#shake {
-  grid-area: shake;
-  text-align: center;
-  color: #FFFFFF;
+   grid-area: shake;
+    background-color: #AA0000;
+    height: 100%;
+    position: relative;
+    z-index: 1;
+    transition: background-color 0.3s;
+}
 
-   background-image: url("../img/cherry-shake.jpg");
-   background-size: cover;
-   color: #000000;
-   background-repeat: no-repeat;
-   background-position: center center;
+div#shake::before{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: .2;
+  z-index: -1;
+  background-image: url("../img/cherry-shake.jpg");
+  background-position: center;
+  background-size: 100% auto;
+  transition: background-size 0.3s, opacity 0.3s, background-color 0.3s;
+}
 
+div#shake:hover {
+  background-color:#AA0000;
+}
+
+div#shake:hover::before{
+  background-size: 110%;
+  opacity: .7;
 }
 
 div#fries {
-  grid-area: fries;
-  text-align: center;
-  color: #000000;
+   grid-area: fries;
+    background-color: #5A5A5A;
+    height: 100%;
+    position: relative;
+    z-index: 1;
+    transition: background-color 0.3s;
+}
 
+div#fries::before{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: .2;
+  z-index: -1;
   background-image: url("../img/back-fries.jpg");
-   background-color: #FFFFFF;
-   background-repeat: no-repeat;
-   background-position: center center;
-   background-size: cover;
+  background-position: center;
+  background-size: 100% auto;
+  transition: background-size 0.3s, opacity 0.3s, background-color 0.3s;
+}
+
+div#fries:hover {
+  background-color: #5A5A5A;
+}
+
+div#fries:hover::before{
+  background-size: 110%;
+  opacity: .7;
+}
+
+div#map {
+  grid-area: map;
 }
 
 div#rate {
@@ -166,13 +221,51 @@ div#rate {
   text-align: center;
 }
 
-div#contact {
-  grid-area: contact;
+div#hire {
+  grid-area: hire;
+  text-align:center;
+}
+
+div#phone {
+  grid-area: phone;
+  text-align: center;
+}
+
+div#email{
+  grid-area: email;
+  text-align: center;
 }
 
 div#name {
   grid-area: name;
+  font-family: 'Crushed', cursive;
 }
+
+
+
+
+
+
+
+.inner {
+  border: double #767676;
+  height: calc(100% - 60px);
+  margin: 30px;
+  padding: 30px;
+}
+
+.close {
+  border: double #767676;
+  height: calc(100% - 60px);
+  margin: 30px;
+  padding: 30px;
+}
+
+.menulink {
+  padding-left: 30px;
+}
+
+
 
 /*********** End Layout Styles ***********/
 
@@ -185,7 +278,37 @@ h1 {
 }
 
 h2 {
+  text-align: center;
+  color: #5A5A5A;
+  font-family: 'Yeseva One', cursive;
 
+}
+
+#shake h2 {
+  color: #F3F2EB;
+  margin-top: 0;
+  text-align: center;
+  font-family: 'Yeseva One', cursive;
+}
+
+#shake p {
+  text-align: center;
+  color: #F3F2EB;
+  font-family: 'Crushed', cursive;
+  font-size: 22px;
+}
+#fries h2 {
+  color: #F3F2EB;
+  margin-top: 0;
+  text-align: center;
+  font-family: 'Yeseva One', cursive;
+}
+
+#fries p {
+  text-align: center;
+  color: #F3F2EB;
+  font-family: 'Crushed', cursive;
+  font-size: 22px;
 }
 
 h3 {
@@ -207,7 +330,13 @@ h6 {
 /* Paragraphs and lists */
 
 p {
+color: #5A5A5A;
+font-family: 'Crushed', cursive;
+}
 
+#menu p {
+  color: #ffffff;
+    text-align: center;
 }
 
 ol {
@@ -215,6 +344,8 @@ ol {
 }
 
 ul {
+  font-family: 'Crushed', cursive;
+  font-size: 20px;
 
 }
 
@@ -252,19 +383,25 @@ img {
 /* links */
 
 a:link {
-background-color: #333333;
+background-color: #5A5A5A;
 border: 2px solid #BC313A;
 border-radius: 8px;
 font-size: 35px;
 color: #F3F2EB;
 text-decoration: none;
 font-weight: bold;
+font-family: 'Spectral SC', serif;
 
 }
 
 
 a:visited {
-
+  background-color: #5A5A5A;
+  border: 2px solid #BC313A;
+  border-radius: 8px;
+  color: #F3F2EB;
+  text-decoration: none;
+  font-weight: bold;
 }
 
 a:hover {
@@ -273,6 +410,10 @@ a:hover {
 
 a:active {
 
+}
+
+img, iframe {
+  max width: 100%;
 }
 
 /* forms */
