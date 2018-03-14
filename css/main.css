@@ -29,6 +29,7 @@ header {
   align-items: center;
   background-color: #5A5A5A;
   /*border: 3px solid #990000;  disable this line once layout works */
+  border-bottom: 5px solid #BC313A;
   display: grid;
   grid-column-gap: 15px;
   grid-row-gap: 15px;
@@ -93,6 +94,26 @@ footer {
       "rate phone"
       "hire email"
       "name .";
+  }
+
+  #shake-intro {
+    grid-column: span 2;
+  }
+
+  #fries-intro {
+    grid-column: span 2;
+  }
+
+  #pick {
+    grid-column: span 2;
+  }
+
+  #special{
+    grid-column: span 2;
+  }
+
+  #continued{
+    grid-column: span 2;
   }
 }
 
@@ -312,7 +333,7 @@ h2 {
 }
 
 h3 {
-
+color: #AA0000;
 }
 
 h4 {
@@ -377,7 +398,7 @@ td {
 
 /* images */
 img {
-
+max-width: 100%;
 }
 
 /* links */
@@ -386,7 +407,7 @@ a:link {
 background-color: #5A5A5A;
 border: 2px solid #BC313A;
 border-radius: 8px;
-font-size: 35px;
+font-size: 30px;
 color: #F3F2EB;
 text-decoration: none;
 font-weight: bold;
